@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta - Sin Censura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        header img {
+            width: 150px;
+            cursor: pointer;
+        }
+
+        form {
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #ffc107;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #444;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #ffc107;
+            color: #222;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ffa000;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var logo = document.getElementById("logo");
+            logo.onclick = function() {
+                window.location.href = "inicio.html";
+            };
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <img id="logo" src="Imagenes/img-1.png" alt="Sin Censura">
+    </header>
+    <form action="procesar_registro.php" method="post">
+        <label for="username">Nombre de usuario:</label>
+        <input type="text" id="username" name="username" minlength="3" maxlength="250" required>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" minlength="8" maxlength="50" required pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+]).{8,}">
+        <small>Debe contener al menos 1 mayúscula, 1 número y 1 carácter especial</small>
+        <br>
+        <input type="submit" value="Crear Cuenta">
+    </form>
+</body>
+</html>

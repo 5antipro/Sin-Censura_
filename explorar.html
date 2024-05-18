@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed - Sin Censura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        header img {
+            width: 150px;
+            cursor: pointer;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 15px;
+        }
+
+        nav a:hover {
+            background-color: #444;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .category {
+            background-color: #444;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .category:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            color: #fff;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var logo = document.getElementById("logo");
+            logo.onclick = function() {
+                window.location.href = "inicio.html";
+            };
+
+            document.querySelectorAll('.category').forEach(function(category) {
+                category.onclick = function() {
+                    var categoryType = this.dataset.category;
+                    window.location.href = categoryType + '.html';
+                };
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <img id="logo" src="Imagenes/img-1.png" alt="Sin Censura">
+    </header>
+    <nav>
+        <a href="subir_video.html">Subir Video</a>
+        <a href="explorar.html">Explorar</a>
+        <a href="mi_perfil.html">Mi Perfil</a>
+    </nav>
+    <section>
+        <div class="category" data-category="videojuegos">Videos de videojuegos</div>
+        <div class="category" data-category="vlogs">Vlogs</div>
+        <div class="category" data-category="tutoriales">Tutoriales</div>
+        <div class="category" data-category="hauls">Hauls</div>
+        <div class="category" data-category="reseñas_productos">Reseñas de productos</div>
+        <div class="category" data-category="unboxing">Unboxing</div>
+        <div class="category" data-category="videos_formativos">Videos formativos</div>
+        <div class="category" data-category="cocina">Cocina</div>
+        <div class="category" data-category="viajes">Viajes</div>
+        <div class="category" data-category="deportes">Deportes</div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Sin Censura - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
